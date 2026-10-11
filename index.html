@@ -1,12 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> One Gunner Executive Car Wash</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Gunner Executive Car Wash | Lusaka, Zambia</title>
+  <meta name="description" content="One Gunner Executive Car Wash at Lilayi Paramilitary, Lusaka, Zambia. Detailing, polishing, steam cleaning, carpet and sofa cleaning and headlight restoration. Open every day.">
+  <meta name="theme-color" content="#032840">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="One Gunner Executive Car Wash">
+  <meta property="og:description" content="Professional car wash in Lusaka, Zambia.">
+  <meta property="og:image" content="__SITE_URL__/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "One Gunner Executive Car Wash",
+    "telephone": "+260979193930",
+    "address": { "@type": "PostalAddress", "streetAddress": "Lilayi Paramilitary", "addressLocality": "Lusaka", "addressCountry": "ZM" },
+    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "08:00", "closes": "20:30" }]
+  }
+  </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
+  <!-- Promo bar (EDIT the text when you have a real offer) -->
+  <div class="promo">
+    <p>Book your wash on WhatsApp. We are in Lusaka, Zambia.</p>
+  </div>
 
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="#top" class="brand" aria-label="One Gunner Executive Car Wash">
+        <img src="images/favicon.svg" alt="" width="44" height="44">
+        <span class="brand-text"><strong>One Gunner</strong><small>Executive Car Wash</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="links" id="navLinks">
+        <li><a href="#washes">Services</a></li>
+        <li><a href="#included">What you get</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#location">Find us</a></li>
+        <li><a href="#contact" class="btn btn-yellow btn-small">Book now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-photo" role="img" aria-label="The One Gunner wash area, a covered bay with blue steel posts"></div>
+      <div class="wrap hero-content">
+        <div class="hero-text">
+          <p class="kicker">Lilayi, Lusaka</p>
+          <h1>A clean car, done properly.</h1>
+          <p class="lede">Detailing, polishing and steam cleaning. Open every day.</p>
+          <div class="btn-row">
+            <a href="#contact" class="btn btn-yellow">Book now</a>
+            <a href="#washes" class="link-arrow">Our services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Find us strip -->
+    <section class="strip" id="location">
+      <div class="wrap strip-row">
+        <div>
+          <h2>Find us in Lusaka</h2>
+          <p><!-- TODO: add the exact address -->Lilayi Paramilitary, Lusaka, Zambia</p>
+        </div>
+        <div>
+          <h3>Opening hours</h3>
+          <p>Monday to Sunday<br>8:00 AM to 8:30 PM</p>
+          <p class="open-now" id="openNow" hidden></p>
+        </div>
+        <div class="strip-cta">
+          <a class="btn btn-blue" href="https://www.google.com/maps/search/?api=1&amp;query=Lilayi+Paramilitary+Lusaka+Zambia" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="map" aria-label="Map of One Gunner Executive Car Wash">
+      <iframe title="Map showing Lilayi Paramilitary, Lusaka" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Lilayi+Paramilitary+Lusaka+Zambia&amp;output=embed"></iframe>
+    </div>
+
+    <!-- Services -->
+    <section class="section" id="washes">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>Our services</h2>
+          <p>Everything your car needs, inside and out. Prices are a starting point and depend on your vehicle. Message us for an exact price.</p>
+        </header>
+        <div class="cards">
+          <article class="card">
+            <svg class="svc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15v-3l2-5h14l2 5v3M3 15h18M3 15v3h3v-3M18 15v3h3v-3"/><circle cx="7.5" cy="12.5" r="1"/><circle cx="16.5" cy="12.5" r="1"/></svg><h3>Exterior and interior detailing</h3>
+            <div class="price"><small>From</small> <span class="todo" data-price>K250</span></div>
+            <p>A careful clean of the outside and the inside of your vehicle.</p>
+            <a href="#contact" class="btn btn-blue" data-pick="Exterior and interior detailing">Book this</a>
+          </article>
+          <article class="card">
+            <svg class="svc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg><h3>Vehicle polishing</h3>
+            <div class="price"><small>From</small> <span class="todo" data-price>K400</span></div>
+            <p>Bring back the shine to your paintwork.</p>
+            <a href="#contact" class="btn btn-blue" data-pick="Vehicle polishing">Book this</a>
+          </article>
+          <article class="card">
+            <svg class="svc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3c-2 2 2 3 0 5M12 3c-2 2 2 3 0 5M16 3c-2 2 2 3 0 5"/><path d="M4 13h16l-2 7H6z"/></svg><h3>Steam cleaning</h3>
+            <div class="price"><small>From</small> <span class="todo" data-price>K300</span></div>
+            <p>Deep cleaning with steam for a fresh, hygienic finish.</p>
+            <a href="#contact" class="btn btn-blue" data-pick="Steam cleaning">Book this</a>
+          </article>
+          <article class="card">
+            <svg class="svc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11V8a3 3 0 013-3h10a3 3 0 013 3v3"/><path d="M3 11a2 2 0 014 0v2h10v-2a2 2 0 014 0v6H3zM5 17v2M19 17v2"/></svg><h3>Carpet and sofa cleaning</h3>
+            <div class="price"><small>From</small> <span class="todo" data-price>K350</span></div>
+            <p>Fresh carpets and sofas, for your car or your home.</p>
+            <a href="#contact" class="btn btn-blue" data-pick="Carpet and sofa cleaning">Book this</a>
+          </article>
+          <article class="card">
+            <svg class="svc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8c6-1 9 1 9 4s-3 5-9 4z"/><path d="M16 8h5M16 12h5M16 16h5"/></svg><h3>Headlight restoration</h3>
+            <div class="price"><small>From</small> <span class="todo" data-price>K200</span></div>
+            <p>Clearer headlights for better visibility on the road.</p>
+            <a href="#contact" class="btn btn-blue" data-pick="Headlight restoration">Book this</a>
+          </article>
+          <article class="card card-ask">
+            <svg class="svc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><h3>Something else?</h3>
+            <p>Not sure which service you need? Message us and we will help you choose.</p>
+            <a href="https://wa.me/260979193930" target="_blank" rel="noopener" class="btn btn-yellow">Message on WhatsApp</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase (3D tilt image) -->
+    <section class="section showcase" id="showcase">
+      <svg class="rim" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="82"/><circle cx="100" cy="100" r="22"/><circle cx="100" cy="100" r="7"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(0 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(36 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(72 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(108 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(144 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(180 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(216 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(252 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(288 100 100)"/><path d="M100 24 L108 78 L100 80 L92 78 Z" transform="rotate(324 100 100)"/></svg>
+      <div class="wrap showcase-grid">
+        <div class="showcase-copy">
+          <p class="kicker">Detail work</p>
+          <h2>Every detail counts</h2>
+          <p>From the wheels to the headlights, we treat every vehicle with care. Clean, polished and finished properly.</p>
+          <ul class="checks">
+            <li>Exterior and interior detailing</li>
+            <li>Polishing for a deep shine</li>
+            <li>Headlight restoration</li>
+          </ul>
+          <a href="#contact" class="btn btn-yellow">Book now</a>
+        </div>
+        <div class="tilt" id="tilt">
+          <div class="tilt-card">
+            <img src="images/wheel.jpg" alt="Alloy wheel covered in foam and water droplets during a wash" loading="lazy">
+            <span class="glare" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>How it works</h2>
+        </header>
+        <ol class="steps">
+          <li><span class="step-n">1</span><h3>Message us</h3><p>Tell us what you need on WhatsApp, or use the booking form.</p></li>
+          <li><span class="step-n">2</span><h3>Bring your vehicle</h3><p>Come to Lilayi any day between 8:00 AM and 8:30 PM.</p></li>
+          <li><span class="step-n">3</span><h3>Drive away clean</h3><p>We finish the job and hand back your clean vehicle.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- What you get -->
+    <section class="section section-alt" id="included">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>Why One Gunner</h2>
+        </header>
+        <div class="features">
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l9-6 9 6v11M3 21h18M9 21v-6h6v6"/></svg>
+            <h3>Covered wash area</h3>
+            <p>A roofed bay keeps you and your car out of the sun and rain.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>
+            <h3>Fenced premises</h3>
+            <p>Your car waits in a walled and fenced compound.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17a8 8 0 1116 0"/><path d="M12 17l4-5"/></svg>
+            <h3>Open every day</h3>
+            <p>Monday to Sunday, 8:00 AM to 8:30 PM.</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v18H7zM11 18h2"/></svg>
+            <h3>Easy to book</h3>
+            <p>Message us on WhatsApp and we will confirm your time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="wrap about">
+        <div class="about-photo"></div>
+        <div>
+          <h2>Built to give back</h2>
+          <p>One Gunner Executive Car Wash was started by Levyson Phiri, a police officer at Lilayi Paramilitary. He serves his community in uniform, and he wanted to give back to it in another way: by building a place where people in Lilayi and across Lusaka can have their vehicles cared for properly.</p>
+          <p>Our promise is simple: honest work, a clean finish and a warm welcome, every day of the week.</p>
+          <p class="about-quote"><span class="todo">[Levyson: add a few words in your own voice about why you started this]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>Common questions</h2>
+        </header>
+        <div class="faq">
+          <details>
+            <summary>What are your opening hours?</summary>
+            <p>We are open every day, Monday to Sunday, from 8:00 AM to 8:30 PM.</p>
+          </details>
+          <details>
+            <summary>How do I book?</summary>
+            <p>Message us on WhatsApp or use the booking form on this page. The form opens WhatsApp with your request filled in, and we reply to confirm.</p>
+          </details>
+          <details>
+            <summary>How much does it cost?</summary>
+            <p>The price depends on the service and your vehicle. Message us and we will give you a price.</p>
+          </details>
+          <details>
+            <summary>Where are you?</summary>
+            <p>We are at Lilayi Paramilitary in Lusaka. Use the Get directions button above for a map.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / booking -->
+    <section class="section contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Book with us</h2>
+          <p>Send us your details and we will reply on WhatsApp to confirm.</p>
+          <ul class="contact-list">
+            <li><span>Phone / WhatsApp</span><strong><a href="https://wa.me/260979193930" target="_blank" rel="noopener">+260 97 919 3930</a></strong></li>
+            <li><span>Where</span><strong>Lilayi Paramilitary, Lusaka, Zambia</strong></li>
+          </ul>
+        </div>
+        <form class="booking" id="bookingForm">
+          <h3>Request a booking</h3>
+          <label>Service
+            <select id="bkWash">
+              <option>Exterior and interior detailing</option>
+              <option>Vehicle polishing</option>
+              <option>Steam cleaning</option>
+              <option>Carpet and sofa cleaning</option>
+              <option>Headlight restoration</option>
+            </select>
+          </label>
+          <div class="row">
+            <label>Date <input type="date" id="bkDate"></label>
+            <label>Time <input type="time" id="bkTime"></label>
+          </div>
+          <label>Car (make and model) <input type="text" id="bkCar" autocomplete="off"></label>
+          <label>Your name <input type="text" id="bkName" autocomplete="name"></label>
+          <button type="submit" class="btn btn-yellow">Send on WhatsApp</button>
+          <p class="fine">This opens WhatsApp with your request filled in. Nothing is sent until you press send.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="tread" aria-hidden="true"></div>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand"><img src="images/favicon.svg" alt="" width="48" height="48"><span class="brand-text"><strong>One Gunner</strong><small>Executive Car Wash</small></span></a>
+        <p>Detailing, polishing and steam cleaning at Lilayi, Lusaka. Open every day.</p>
+      </div>
+      <nav class="footer-col" aria-label="Quick links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#washes">Services</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#faq">Questions</a></li>
+          <li><a href="#contact">Book now</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/260979193930" target="_blank" rel="noopener">WhatsApp: +260 97 919 3930</a></li>
+          <li><a href="tel:+260979193930">Call us</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Lilayi+Paramilitary+Lusaka+Zambia" target="_blank" rel="noopener">Lilayi Paramilitary, Lusaka</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Opening hours</h4>
+        <ul>
+          <li>Monday to Sunday</li>
+          <li>8:00 AM to 8:30 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <div class="wrap legal-row">
+        <p>&copy; <span id="year"></span> One Gunner Executive Car Wash. All rights reserved.</p>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html#disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="mobile-bar" aria-label="Quick contact">
+    <a class="call" href="tel:+260979193930">Call</a>
+    <a class="wa" href="https://wa.me/260979193930" target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

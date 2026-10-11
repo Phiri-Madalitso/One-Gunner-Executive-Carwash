@@ -429,3 +429,5 @@ body.legal .back:hover { color: var(--gold); }
 .legal-body h2 { font-size: 1.6rem; margin: 40px 0 10px; }
 .legal-body p { color: var(--ink-soft); }
 .legal-body .draft { background: #fff6cc; color: #6b5400; padding: 10px 14px; border-radius: 8px; font-size: 0.9rem; }
+
+.card .price[hidden] { display: none; }

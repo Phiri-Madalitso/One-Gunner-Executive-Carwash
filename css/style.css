@@ -431,3 +431,6 @@ body.legal .back:hover { color: var(--gold); }
 .legal-body .draft { background: #fff6cc; color: #6b5400; padding: 10px 14px; border-radius: 8px; font-size: 0.9rem; }
 
 .card .price[hidden] { display: none; }
+
+/* Prices shown cleanly (they are still examples until Levy confirms) */
+.card .price .todo { background: transparent; color: var(--blue); padding: 0; }

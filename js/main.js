@@ -133,3 +133,48 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { passive: true });
   update();
 });
+
+// Button press ripple, animated FAQ drop-downs
+document.addEventListener('DOMContentLoaded', function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Ripple from the point of contact
+  if (!reduce) {
+    document.addEventListener('pointerdown', function (e) {
+      var b = e.target.closest && e.target.closest('.btn, .mobile-bar a');
+      if (!b) return;
+      var r = b.getBoundingClientRect();
+      var size = Math.max(r.width, r.height) * 2;
+      var s = document.createElement('span');
+      s.className = 'ripple';
+      s.style.width = s.style.height = size + 'px';
+      s.style.left = (e.clientX - r.left - size / 2) + 'px';
+      s.style.top = (e.clientY - r.top - size / 2) + 'px';
+      b.appendChild(s);
+      s.addEventListener('animationend', function () { s.remove(); });
+    }, { passive: true });
+  }
+
+  // FAQ: open and close with a height animation
+  document.querySelectorAll('.faq details').forEach(function (d) {
+    var summary = d.querySelector('summary');
+    var anim = null;
+    summary.addEventListener('click', function (e) {
+      if (reduce || !d.animate) return;
+      e.preventDefault();
+      if (anim) anim.cancel();
+      var opening = !d.open;
+      var start = d.offsetHeight;
+      d.style.overflow = 'hidden';
+      if (opening) { d.open = true; }
+      var end = opening ? d.scrollHeight : summary.offsetHeight;
+      anim = d.animate({ height: [start + 'px', end + 'px'] }, { duration: opening ? 480 : 360, easing: 'cubic-bezier(.22, 1, .36, 1)' });
+      anim.onfinish = function () {
+        if (!opening) d.open = false;
+        d.style.overflow = '';
+        anim = null;
+      };
+      anim.oncancel = function () { d.style.overflow = ''; };
+    });
+  });
+});

@@ -434,3 +434,139 @@ body.legal .back:hover { color: var(--gold); }
 
 /* Prices shown cleanly (they are still examples until Levy confirms) */
 .card .price .todo { background: transparent; color: var(--blue); padding: 0; }
+
+/* =====================================================
+   Buttons: smoother, smaller on mobile, with in/out effects
+   ===================================================== */
+:root { --ease-out: cubic-bezier(.22, 1, .36, 1); }
+
+.btn, .mobile-bar a { position: relative; overflow: hidden; isolation: isolate; -webkit-tap-highlight-color: transparent; }
+.btn {
+  transition: transform .4s var(--ease-out), background-color .35s var(--ease-out), color .35s var(--ease-out),
+              border-color .35s var(--ease-out), box-shadow .45s var(--ease-out), outline-offset .2s ease;
+}
+/* soft light sweep across the button, runs on hover in and out */
+.btn::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.38) 50%, transparent 70%);
+  transform: translateX(-130%); transition: transform .8s var(--ease-out);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 26px -14px rgba(2, 31, 51, 0.55); }
+.btn:hover::after { transform: translateX(130%); }
+.btn:active { transform: translateY(0) scale(.97); box-shadow: 0 4px 10px -6px rgba(2, 31, 51, 0.5); transition-duration: .12s; }
+.btn-ghost:hover { background: #fff; border-color: #fff; color: var(--navy); }
+.btn-yellow:hover { box-shadow: 0 16px 28px -14px rgba(255, 209, 52, 0.85); }
+.btn-blue:hover { box-shadow: 0 14px 26px -14px rgba(37, 93, 137, 0.8); }
+:focus-visible { transition: outline-offset .2s ease; outline-offset: 4px; }
+
+/* press ripple (added by JS) */
+.ripple { position: absolute; border-radius: 50%; pointer-events: none; z-index: -1; background: rgba(255, 255, 255, 0.55); transform: scale(0); animation: ripple .65s var(--ease-out) forwards; }
+@keyframes ripple { to { transform: scale(1); opacity: 0; } }
+
+/* header links: underline slides in and out */
+.links a:not(.btn) { position: relative; transition: color .3s var(--ease-out); }
+.links a:not(.btn)::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 8px; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform .45s var(--ease-out); }
+.links a:not(.btn):hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* text link in hero: underline fills in */
+.link-arrow { border-bottom: 0; background: linear-gradient(var(--gold), var(--gold)) left bottom / 0% 1px no-repeat, linear-gradient(rgba(255,255,255,.35), rgba(255,255,255,.35)) left bottom / 100% 1px no-repeat; transition: background-size .5s var(--ease-out), color .3s var(--ease-out); }
+.link-arrow:hover { background-size: 100% 1px, 100% 1px; color: var(--gold); }
+.link-arrow::after { transition: transform .4s var(--ease-out); }
+
+/* hamburger turns into an X */
+.menu-btn { border-radius: 10px; transition: background-color .3s var(--ease-out), transform .2s ease; }
+.menu-btn:hover { background: rgba(255, 255, 255, 0.08); }
+.menu-btn:active { transform: scale(.92); }
+.menu-btn span { transition: transform .4s var(--ease-out), opacity .25s ease; }
+.menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(.4); }
+.menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* mobile bar buttons */
+.mobile-bar a { transition: transform .3s var(--ease-out), background-color .3s var(--ease-out), color .3s var(--ease-out), border-color .3s var(--ease-out); }
+.mobile-bar a:active { transform: scale(.96); }
+.mobile-bar .wa:active { background: rgba(255, 255, 255, 0.12); }
+@media (max-width: 860px) { .mobile-bar { animation: barIn .7s var(--ease-out) .4s both; } }
+@keyframes barIn { from { transform: translateY(110%); } to { transform: none; } }
+
+/* FAQ drop-downs */
+.faq summary { padding: 0 6px; border-radius: 6px; transition: color .3s var(--ease-out), background-color .3s var(--ease-out), padding-left .35s var(--ease-out); }
+.faq summary:hover { color: var(--blue); background: rgba(37, 93, 137, 0.06); padding-left: 14px; }
+.faq summary::after { transition: transform .45s var(--ease-out), color .3s ease; }
+.faq details p { padding: 0 6px; animation: faqIn .5s var(--ease-out) both; }
+@keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* form fields */
+.booking input, .booking select { transition: border-color .3s var(--ease-out), box-shadow .35s var(--ease-out), background-color .3s ease; }
+.booking input:hover, .booking select:hover { border-color: var(--blue); }
+.booking input:focus, .booking select:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(37, 93, 137, 0.18); }
+
+/* Touch screens: no sticky hover. The press effect does the work. */
+@media (hover: none) {
+  .btn:hover { transform: none; box-shadow: none; }
+  .btn:hover::after { transform: translateX(-130%); }
+  .btn-ghost:hover { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.55); }
+  .btn-yellow:hover { background: var(--yellow); }
+  .btn-blue:hover { background: var(--blue); }
+  .card:hover { transform: none; }
+}
+
+/* Mobile drop-down menu: slides and fades, links stagger in */
+@media (max-width: 860px) {
+  .links {
+    display: flex; visibility: hidden; opacity: 0; pointer-events: none;
+    clip-path: inset(0 0 100% 0); transform: translateY(-8px);
+    transition: clip-path .5s var(--ease-out), opacity .3s ease, transform .5s var(--ease-out), visibility 0s linear .5s;
+  }
+  .links.open {
+    visibility: visible; opacity: 1; pointer-events: auto; clip-path: inset(0 0 -40px 0); transform: none;
+    transition: clip-path .5s var(--ease-out), opacity .3s ease, transform .5s var(--ease-out), visibility 0s;
+  }
+  .links li { opacity: 0; transform: translateY(-10px); transition: opacity .35s ease, transform .45s var(--ease-out); }
+  .links.open li { opacity: 1; transform: none; }
+  .links.open li:nth-child(1) { transition-delay: .06s; }
+  .links.open li:nth-child(2) { transition-delay: .11s; }
+  .links.open li:nth-child(3) { transition-delay: .16s; }
+  .links.open li:nth-child(4) { transition-delay: .21s; }
+  .links.open li:nth-child(5) { transition-delay: .26s; }
+  .links a:not(.btn)::after { left: 0; right: 0; bottom: 6px; }
+}
+
+/* Smaller, tidier buttons on phones */
+@media (max-width: 600px) {
+  .btn { min-height: 42px; padding: 0 20px; font-size: 0.72rem; letter-spacing: 0.06em; }
+  .btn-small { min-height: 38px; padding: 0 18px; }
+  .card .btn { min-height: 40px; padding: 0 18px; }
+  .hero .btn-row { gap: 10px 18px; }
+  .link-arrow { min-height: 40px; font-size: 0.72rem; }
+  .menu-btn { width: 40px; height: 40px; padding: 9px; }
+  .links a { min-height: 42px; font-size: 0.78rem; }
+  .links a.btn { margin-top: 6px; }
+  .mobile-bar { gap: 8px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); }
+  .mobile-bar a { min-height: 40px; font-size: 0.72rem; }
+  .site-footer { padding-bottom: 80px; }
+  .booking { padding: 22px 18px; }
+  .booking input, .booking select { min-height: 44px; }
+  .faq summary { min-height: 56px; font-size: 0.95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn::after, .links, .links li, .menu-btn span, .faq summary, .faq details p, .mobile-bar { transition: none; animation: none; }
+  .ripple { display: none; }
+}
+
+/* ---- Phone / tablet hero: photo fills the top and melts into the dark blue behind the text ---- */
+@media (max-width: 860px) {
+  .hero { align-items: flex-end; min-height: max(620px, 86svh); }
+  .hero-photo {
+    inset: 0 0 auto 0; width: 100%; height: 66%; opacity: 1; filter: none;
+    background-position: 28% 60%; background-size: cover;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 38%, rgba(0, 0, 0, 0.55) 68%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 38%, rgba(0, 0, 0, 0.55) 68%, transparent 100%);
+  }
+  /* soft vignette so the photo sinks into the background on all sides */
+  .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(180deg, rgba(1, 18, 31, 0.55) 0%, rgba(1, 18, 31, 0) 22%, rgba(1, 18, 31, 0) 52%, var(--navy-deep) 92%); }
+  .hero .hero-content { padding-top: 120px; padding-bottom: 56px; }
+  .hero-text { max-width: 100%; }
+}

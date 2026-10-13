@@ -391,8 +391,8 @@ h1, h2, h3 { font-weight: 700; letter-spacing: 0.02em; }
 /* While prices are still examples they show a yellow highlight. Delete the next rule when they are final. */
 .card .price .todo { background: #fff6cc; padding: 0 8px; border-radius: 4px; color: #6b5400; }
 
-.brand img { width: 52px; height: 52px; }
-.footer-row .brand img { width: 40px; height: 40px; }
+.brand img { width: 52px; height: 52px; border-radius: 22%; }
+.footer-row .brand img { width: 40px; height: 40px; border-radius: 22%; }
 
 /* Price in the top-right corner of each service card */
 .card .price { position: absolute; top: 28px; right: 26px; margin: 0; text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }

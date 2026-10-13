@@ -24,7 +24,7 @@ jobs:
           CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
         run: |
           mkdir dist
-          cp -r index.html privacy.html terms.html robots.txt sitemap.xml css js images dist/
+          cp -r index.html privacy.html terms.html robots.txt sitemap.xml favicon.ico site.webmanifest css js images dist/
           sed -i "s#__SITE_URL__#${SITE_URL%/}#g" dist/*.html dist/robots.txt dist/sitemap.xml
           if [ -n "$CUSTOM_DOMAIN" ]; then echo "$CUSTOM_DOMAIN" > dist/CNAME; fi
           touch dist/.nojekyll
